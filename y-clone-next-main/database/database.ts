@@ -49,7 +49,7 @@ export const getProfileByUsername = async (username: string) => {
 }
 
 export const getPostsByUsername = async (username: string, sort: string = "newest", page: number = 1) => {
-    let sortObject: Sort = { createdOn: -1 };
+    let sortObject: Sort = { createdOn: -1 }; 
     if (sort === "oldest") {
         sortObject = { createdOn: 1 };
     } else if (sort === "most_liked") {
