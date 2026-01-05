@@ -2,7 +2,7 @@
 
 import { useMusicPlayer } from "@/context/MusicPlayerContext";
 import { Song } from "@/types";
-import { useAudioPlayer, useAudioPlayerContext } from "react-use-audio-player";
+import { useAudioPlayer, useAudioPlayerContext } from "react-use-audio-player"; //npm install react-use-audio-player
 
 interface PlayButtonProps {
     song: Song
