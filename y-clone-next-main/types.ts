@@ -10,7 +10,7 @@ export interface Profile {
 }
 
 export interface Post {
-    _id: ObjectId;
+    _id?: ObjectId;        // optional when inserting
     name: string;
     username: string;
     text: string;
@@ -18,3 +18,6 @@ export interface Post {
     profile?: Profile;
     likes: number;
 }
+
+
+

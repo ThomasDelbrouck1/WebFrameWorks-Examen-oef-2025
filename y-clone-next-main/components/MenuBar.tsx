@@ -10,23 +10,33 @@ const MenuBar = () => {
             <div className="mb-8 px-3">
                 <span className="text-2xl font-bold text-gray-900 dark:text-white">Y</span>
             </div>
-            
+
             {/* Navigation Links */}
             <nav className="flex-1">
                 <ul className="space-y-1">
                     <li>
-                        <Link 
-                            href="/" 
+                        <Link
+                            href="/"
                             className="flex items-center gap-4 px-3 py-3 text-xl font-medium text-gray-900 dark:text-white rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors"
                         >
                             <Home className="w-7 h-7" />
                             <span>Home</span>
                         </Link>
                     </li>
+
+                    <li>
+                        <Link
+                            href="/posts"
+                            className="flex items-center gap-4 px-3 py-3 text-xl font-medium rounded-full hover:bg-gray-100 dark:hover:bg-gray-900"
+                        >
+                            <Home className="w-7 h-7" />
+                            <span>Posts</span>
+                        </Link>
+                    </li>
                 </ul>
             </nav>
-            
-          
+
+
         </aside>
     );
 };

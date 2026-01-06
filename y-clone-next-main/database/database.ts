@@ -8,6 +8,11 @@ export const profilesCollection: Collection<Profile> = client.db("y-clone").coll
 
 const PAGE_SIZE = 5;
 
+export const savePost = async (post: Post) => {
+    const result = await postsCollection.insertOne(post);
+    return result;
+};
+
 export const seedDatabase = async () => {
     await postsCollection.deleteMany({});
     await profilesCollection.deleteMany({});
@@ -49,7 +54,7 @@ export const getProfileByUsername = async (username: string) => {
 }
 
 export const getPostsByUsername = async (username: string, sort: string = "newest", page: number = 1) => {
-    let sortObject: Sort = { createdOn: -1 }; 
+    let sortObject: Sort = { createdOn: -1 };
     if (sort === "oldest") {
         sortObject = { createdOn: 1 };
     } else if (sort === "most_liked") {
@@ -100,3 +105,5 @@ export const getPosts = async (q: string = "", sort: string = "newest", page: nu
 
     return { posts, pages };
 }
+
+
