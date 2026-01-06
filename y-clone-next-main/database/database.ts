@@ -101,7 +101,6 @@ export const getPosts = async (q: string = "", sort: string = "newest", page: nu
     const pages = Math.ceil(totalPosts / PAGE_SIZE);
 
 
-    await new Promise((resolve, reject) => setTimeout(() => resolve(null), 10000))
 
     return { posts, pages };
 }
