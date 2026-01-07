@@ -9,7 +9,7 @@ import { useActionState } from "react"
 const LoginPage = () => {
 
     const router = useRouter();
-    const [state, loginAction] = useActionState(login, { success: false, operator_id: "", errors: { operator_id: [], password: [], general: [] } });
+    const [state, loginAction, pending] = useActionState(login, { success: false, operator_id: "", errors: { operator_id: [], password: [], general: [] } });
 
     return (
         <div className="flex min-h-screen items-center justify-center p-6 bg-neutral-900 font-mono">
@@ -71,11 +71,11 @@ const LoginPage = () => {
                         </div>
                         <div className="pt-4 space-y-3">
                             <button
-                                type="button"
-                                onClick={() => router.push("/factions")}
+                                type="submit"
+                                disabled={pending}
                                 className="w-full border-2 border-green-600 bg-green-900/20 py-3 text-sm font-bold uppercase tracking-widest text-green-500 transition hover:bg-green-500 hover:text-black disabled:opacity-50 disabled:cursor-not-allowed group relative overflow-hidden"
                             >
-                                <span className="relative z-10">Initialize Session</span>
+                                <span className="relative z-10"> {pending ? "Logging in..." : "Initialize Session"}</span>
                             </button>
 
                             <button

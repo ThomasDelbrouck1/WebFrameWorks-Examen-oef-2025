@@ -93,8 +93,9 @@ const RegisterPage = () => {
                             <button
                                 type="submit"
                                 className="w-full border-2 border-orange-600 bg-orange-900/20 py-3 text-sm font-bold uppercase tracking-widest text-orange-500 transition hover:bg-orange-500 hover:text-black disabled:opacity-50 disabled:cursor-not-allowed group relative overflow-hidden"
+                                disabled={pending}
                             >
-                                <span className="relative z-10">Initialize Unit</span>
+                                <span className="relative z-10">{pending ? "Registering..." : "Initialize Unit"}</span>
                             </button>
                         </div>
                     </form>
