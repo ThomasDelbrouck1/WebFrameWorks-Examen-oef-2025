@@ -21,4 +21,11 @@ export const seedFactions = async () => {
     console.log("Factions collection seeded!");
 }
 
-export const factions = factionsCollection;
+export const getFactions = async () => {
+    const response = await fetch("https://raw.githubusercontent.com/similonap/json/refs/heads/master/elves/factions.json");
+    const data: Faction[] = await response.json();
+
+    let factions: Faction[] = data;
+
+    return factions;
+}

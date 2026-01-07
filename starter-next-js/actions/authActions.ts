@@ -75,9 +75,9 @@ export const register = async (prevState: RegisterState, formData: FormData): Pr
     }
 
 
-    const newOperator: Omit<Operator> = {
+    const newOperator: Omit<Operator, "id"> = {
         operator_id,
-        password,
+        passwordHash = password,
         elfCollection: []
     };
 

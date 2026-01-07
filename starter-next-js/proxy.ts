@@ -21,5 +21,5 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/', '/factions', '/party', '/factions/:id'],
+  matcher: [],
 }
